@@ -20,12 +20,15 @@
         </div>
         <img src="img/DSC_3478.JPG" alt="sea">
     </section>
+    <section>
+        <h1>End</h1>
+    </section>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
 
 <script>
-    let tl = gsap.timeline({
+    /*let tl = gsap.timeline({
         scrollTigger: '.dark',
         start: 'center bottom'
     })
@@ -38,6 +41,34 @@
         y: 300,
         opacity: 0,
         duration: 1
-    }, '-=1')
+    }, '-=1')*/
+
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: '.dark',
+            start: 'top center',
+            end: 'bottom center',
+            scrub: true,
+            markers: true
+        }
+
+    }).from('.content', {
+        y: 300,
+        opacity: 0,
+        duration: 5,
+    }).to('.content', {
+        y: -500,
+        opacity: 0,
+        duration: 5
+    })
+    
+    
+    /*.from('img', {
+        y: innerHeight * 0.5
+    }).from('.content', {
+        y: innerHeight * 0.5
+    })*/
+
+
 </script>
 </html>
